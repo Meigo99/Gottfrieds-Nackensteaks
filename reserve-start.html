@@ -9,14 +9,14 @@
     <div class="container">
         <div class="row justify-content-center align-items-center mt-3" id="header">
             <div class="btn-group">
-                <button type="button" class="btn btn-light p-4 m-1 border border-3">Logo</button>
-                <button type="button" class="btn btn-light p-4 m-1 border border-3">Home</button>
+                <a href="./index.html" type="button" class="btn btn-light p-4 m-1 border border-3">Logo</a>
+                <a href="index.html" type="button" class="btn btn-light p-4 m-1 border border-3">Home</a>
                 <button type="button" class="btn btn-light p-4 m-1 border border-3">Speisekarte</button>
                 <button type="button" class="btn btn-light p-4 m-1 border border-3">Kontakt</button>
-                <button type="button" class="btn btn-light p-4 m-1 border border-3">Reservieren</button>
+                <button type="button" class="btn btn-light p-4 m-1 border border-3 bg-success">Reservieren</button>
             </div>
         </div>
-        <div class="row mt-3 mr-3 " style="height: 80vh;" id="content">
+        <div class="row mt-3 mr-3" style="height: 80vh;" id="content">
             <div class="col-2 border border-3">
                 <div class="mt-3" style="text-align: center;">
                     <h4>NEWS</h4>
@@ -28,9 +28,21 @@
             </div>
             
 
-            <div class="col-9 mt-3">
-                <div class="align-bottom">
+            <div class="col-9 mt-3 offset-1">
+                <div class="justify-content-center align-content-center" align="center">
+                    <h4 class="mt-5 mb-5" style="text-align: center;">
+                        Mit wie vielen <br>
+                        Personen möchtest du zu <br>
+                        uns kommen?
+                    </h4>  
                     
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="2" aria-label="Anzahl der Personen">
+                        <button class="btn btn-success" type="button">+</button>
+                        <button class="btn btn-danger" type="button">-</button>
+                    </div>
+    
+                    <a href="./reserve-date.html" class="btn btn-primary mt-3">Weiter</a>
                 </div>
                 
             </div>
