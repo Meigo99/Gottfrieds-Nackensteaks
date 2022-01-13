@@ -6,6 +6,27 @@
     <link href="./css/stylesheet.css" rel="stylesheet">
 </head>
 <body>
+    <script>
+        function increment(id)
+        {
+            var counter = document.getElementById(id);
+
+            if (counter.value < 69)
+            {
+                counter.value++;
+            }
+        }
+
+        function decrement(id)
+        {
+            var counter = document.getElementById(id);
+
+            if (counter.value > 0)
+            {
+                counter.value--;
+            }
+        }
+    </script>
     
     <div class="container">
         <div class="row justify-content-center align-items-center mt-3" id="header">
@@ -29,9 +50,57 @@
             </div>
             
 
-            <div class="col-9 mt-3">
-                <div class="align-bottom">
+            <div class="col-9 mt-3 offset-1">
+                <div class="justify-content-center align-content-center" align="center">
+                    <h4 class="mt-5 mb-5" style="text-align: center;">
+                        Hier kannst du etwas zu Essen auswählen.<br>
+                        Selbstverständlich kannst du auch vor Ort bestellen.
+                    </h4>
+
+                    <h5 class="mt-5 mb-5" style="text-align: left; color:brown;">
+                        Hauptspeisen
+                    </h5>
                     
+                    <div class="input-group mt-3">
+                        <a>Gottfrieds Nackensteak mit Hauskroketen</a>
+                        <input id="steak" type="text" class="form-control" aria-label="Anzahl der Steaks" value="0"/>
+                        <button class="btn btn-success" type="button" onclick="increment('steak')">+</button>
+                        <button class="btn btn-danger" type="button" onclick="decrement('steak')">-</button>
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <a>Geflügelcurrywurst mit Pommes von gestern</a>
+                        <input id="curry" type="text" class="form-control" aria-label="Anzahl der Currywurst" value="0"/>
+                        <button class="btn btn-success" type="button" onclick="increment('curry')">+</button>
+                        <button class="btn btn-danger" type="button" onclick="decrement('curry')">-</button>
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <a>Pasta Digga</a>
+                        <input id="pasta" type="text" class="form-control" aria-label="Anzahl der Pasta" value="0"/>
+                        <button class="btn btn-success" type="button" onclick="increment('pasta')">+</button>
+                        <button class="btn btn-danger" type="button" onclick="decrement('pasta')">-</button>
+                    </div>
+
+                    <h5 class="mt-5 mb-5" style="text-align: left; color:brown;">
+                        Getränke
+                    </h5>
+
+                    <div class="input-group mt-3">
+                        <a>Hauspapete</a>
+                        <input id="papete" type="text" class="form-control" aria-label="Anzahl der Papete" value="0"/>
+                        <button class="btn btn-success" type="button" onclick="increment('papete')">+</button>
+                        <button class="btn btn-danger" type="button" onclick="decrement('papete')">-</button>
+                    </div>
+
+                    <div class="input-group mt-3">
+                        <a>Verdammte Zitrone</a>
+                        <input id="zitrone" type="text" class="form-control" aria-label="Anzahl der Zitrone" value="0"/>
+                        <button class="btn btn-success" type="button" onclick="increment('zitrone')">+</button>
+                        <button class="btn btn-danger" type="button" onclick="decrement('zitrone')">-</button>
+                    </div>
+    
+                    <a href="./reserve-contact.html" class="btn btn-primary mt-3">Weiter</a>
                 </div>
                 
             </div>
