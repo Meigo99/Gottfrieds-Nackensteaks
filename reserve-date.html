@@ -11,7 +11,77 @@
     <link rel="stylesheet" href="./calendar/css/rome.css">
 </head>
 <body>
-    
+    <script>
+        function getUhrzeit()
+        {
+            var timeInput = document.getElementById("uhrzeit");
+
+            var words = timeInput.value.split(':');
+
+            if (words.length != 2)
+            {
+                timeInput.value = "12:00"
+            }
+
+            var stunden = parseInt(words[0]);
+            var minuten = parseInt(words[1]);
+
+            return [stunden, minuten];
+        }
+
+        function setUhrzeit(stunden, minuten)
+        {
+            var timeInput = document.getElementById("uhrzeit");
+
+            timeInput.value = `${stunden < 9 ? '0' : ''}${stunden}:${minuten < 9 ? '0' : ''}${minuten}`;
+        }
+
+        function incrementTime()
+        {
+            [stunden, minuten] = getUhrzeit();
+
+            if ((minuten + 15) < 60)
+            {
+                minuten += 15;
+            }
+            else
+            {
+                stunden++;
+
+                if (stunden > 23)
+                {
+                    stunden = 0;
+                }
+
+                minuten = 0;
+            }
+
+            setUhrzeit(stunden, minuten);
+        }
+
+        function decrementTime()
+        {
+            [stunden, minuten] = getUhrzeit();
+
+            if ((minuten - 15) >= 0)
+            {
+                minuten -= 15;
+            }
+            else
+            {
+                stunden--;
+
+                if (stunden < 0)
+                {
+                    stunden = 23;
+                }
+
+                minuten = 45;
+            }
+
+            setUhrzeit(stunden, minuten);
+        }
+    </script>
     <div class="container">
         <div class="row justify-content-center align-items-center mt-3" id="header">
             <div class="btn-group">
@@ -51,9 +121,9 @@
                         </div>
                         <div class="col-6" style="margin-top: 20vh;">
                             <div class="input-group mt-3">
-                                <input type="text" class="form-control" placeholder="12:00" aria-label="Anzahl der Personen">
-                                <button class="btn btn-success" type="button">+</button>
-                                <button class="btn btn-danger" type="button">-</button>
+                                <input id="uhrzeit" type="text" class="form-control" placeholder="12:00" aria-label="Anzahl der Personen" value="12:00">
+                                <button class="btn btn-success" type="button" onclick="incrementTime()">+</button>
+                                <button class="btn btn-danger" type="button" onclick="decrementTime()">-</button>
                             </div>
                         </div>
                     </div>
