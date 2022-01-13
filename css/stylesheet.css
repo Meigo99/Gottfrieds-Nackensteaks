@@ -2,3 +2,120 @@
     width: 5%;
     height: auto;
 }
+
+.floorplan{
+    width: 700px;
+    height: auto;
+}
+
+.button-taken {
+    background-color: red;
+}
+
+.button-free {
+    background-color: green;
+}
+
+#img_container {
+    position:relative;
+    display:inline-block;
+    text-align:center;
+}
+
+.button_tisch {
+    position: absolute;
+}
+
+#button_tisch1{
+    transform: rotateZ(55deg);
+    top:102px;
+    left:320px;
+    height: 30px;
+    width: 30px;
+}
+
+#button_tisch2{
+    transform: rotateZ(64deg);
+    top:75px;
+    left:363px;
+    height: 30px;
+    width: 30px;
+}
+
+#button_tisch3{
+    transform: rotateZ(-4deg);
+    top:248px;
+    left:285px;
+    height: 27px;
+    width: 26px;
+}
+
+#button_tisch4{
+    transform: rotateZ(-35deg);
+    top:144px;
+    left:250px;
+    height: 25px;
+    width: 45px;
+}
+
+#button_tisch5{
+    border-radius: 50%;
+    top:299px;
+    left:96px;
+    height: 50px;
+    width: 50px;
+}
+
+#button_tisch6{
+    transform: rotateZ(60deg);
+    top:220px;
+    left:147px;
+    height: 28px;
+    width: 28px;
+}
+
+#button_tisch7{
+    top:356px;
+    left:401px;
+    height: 27px;
+    width: 27px;
+}
+
+#button_tisch8{
+    top:375px;
+    left:475px;
+    height: 25px;
+    width: 42px;
+}
+
+#button_tisch9{
+    transform: rotateZ(-64deg);
+    top:325px;
+    left:585px;
+    height: 25px;
+    width: 42px;
+}
+
+#button_tisch10{
+    transform: rotateZ(6deg);
+    top:247px;
+    left:618px;
+    height: 27px;
+    width: 27px;
+}
+
+#button_tisch11{
+    transform: rotateZ(-14deg);
+    top:184px;
+    left:610px;
+    height: 29px;
+    width: 29px;
+}
+
+#button_tisch12{
+    transform: rotateZ(-40deg);
+    top:134px;
+    left:585px;
+    height: 29px;
+    width: 29px;
+}
