@@ -7,6 +7,12 @@
 </head>
 <body>
     
+    <script>
+        function showAlert() {
+          document.getElementById("tischAlert").style.display = "block";
+        }
+    </script>
+
     <div class="container">
         <div class="row justify-content-center align-items-center mt-3" id="header">
             <div class="btn-group">
@@ -46,19 +52,23 @@
                 </div>
                 <h4 class="mt-2 mb-2" style="text-align: center;">Bitte wählen Sie einen Tisch aus</h4>
 
+                <div id="tischAlert" style="display: none" class="alert alert-danger" role="alert">
+                    Der Tisch ist bereits belegt! Bitte wähle einen anderen.
+                </div>
+
                 <div id="img_container" class="overlay-gradient has-bg-img">
                     <img src="images/FloorPlan.png" class="floorplan">
                     <button id="button_tisch1" class="btn overlay-content button_tisch button-free" onclick="window.location.href = './reserve-meal.html';"></button>
                     <button id="button_tisch2" class="btn overlay-content button_tisch button-free" onclick="window.location.href = './reserve-meal.html';"></button>
-                    <button id="button_tisch3" class="btn overlay-content button_tisch button-taken"></button>
-                    <button id="button_tisch4" class="btn overlay-content button_tisch button-taken"></button>
+                    <button id="button_tisch3" class="btn overlay-content button_tisch button-taken" onclick="showAlert()"></button>
+                    <button id="button_tisch4" class="btn overlay-content button_tisch button-taken" onclick="showAlert()"></button>
                     <button id="button_tisch5" class="btn overlay-content button_tisch button-free" onclick="window.location.href = './reserve-meal.html';"></button>
                     <button id="button_tisch6" class="btn overlay-content button_tisch button-free" onclick="window.location.href = './reserve-meal.html';"></button>
-                    <button id="button_tisch7" class="btn overlay-content button_tisch button-taken"></button>
-                    <button id="button_tisch8" class="btn overlay-content button_tisch button-taken"></button>
+                    <button id="button_tisch7" class="btn overlay-content button_tisch button-taken" onclick="showAlert()"></button>
+                    <button id="button_tisch8" class="btn overlay-content button_tisch button-taken" onclick="showAlert()"></button>
                     <button id="button_tisch9" class="btn overlay-content button_tisch button-free" onclick="window.location.href = './reserve-meal.html';"></button>
                     <button id="button_tisch10" class="btn overlay-content button_tisch button-free" onclick="window.location.href = './reserve-meal.html';"></button>
-                    <button id="button_tisch11" class="btn overlay-content button_tisch button-taken"></button>
+                    <button id="button_tisch11" class="btn overlay-content button_tisch button-taken" onclick="showAlert()"></button>
                     <button id="button_tisch12" class="btn overlay-content button_tisch button-free" onclick="window.location.href = './reserve-meal.html';"></button>
                 </div>
                 
