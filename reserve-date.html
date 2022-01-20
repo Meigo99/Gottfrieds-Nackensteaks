@@ -12,6 +12,8 @@
 </head>
 <body>
     <script>
+        var changed = false;
+
         function getUhrzeit()
         {
             var timeInput = document.getElementById("uhrzeit");
@@ -38,6 +40,8 @@
 
         function incrementTime()
         {
+            changed = true;
+
             [stunden, minuten] = getUhrzeit();
 
             if ((minuten + 15) < 60)
@@ -61,6 +65,8 @@
 
         function decrementTime()
         {
+            changed = true;
+
             [stunden, minuten] = getUhrzeit();
 
             if ((minuten - 15) >= 0)
@@ -80,6 +86,15 @@
             }
 
             setUhrzeit(stunden, minuten);
+        }
+
+        function showWarning() {
+            if(!changed){
+                document.getElementById("dateWarning").style.display = "block";
+                changed = true;
+            }else {
+                location.href = "./reserve-location.html";
+            }
         }
     </script>
     <div class="container">
@@ -124,6 +139,10 @@
                         Wann möchtest du zu uns kommen?
                     </h4>
 
+                    <div id="dateWarning" class="alert alert-warning" style="display: none" role="alert">
+                        Sie haben nichts verändert. Sind sie sicher dass die Uhrzeit und Datum korrekt sind?
+                    </div>
+
                     <div class="row">
                         <div class="col-6">
                             <input type="text" class="form-control w-25 mx-auto mb-3" id="result" placeholder="Select date" disabled="" style="visibility:hidden">
@@ -142,7 +161,7 @@
                         </div>
                     </div>
 
-                    <a href="./reserve-location.html" class="btn btn-primary mt-5">Weiter</a>
+                    <a onclick="showWarning()" class="btn btn-primary mt-5">Weiter</a>
                     
 
                 </div>
