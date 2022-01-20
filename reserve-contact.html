@@ -12,22 +12,14 @@
             var nachname = document.getElementById("nachname").value;
             var email = document.getElementById("email").value;
 
-            console.log(nachname)
-            console.log(email)
-
             if (nachname.length === 0 || email.length === 0)
             {
-                showAlert();
+                document.getElementById("alarm").style.display = "block";
             }
             else 
             {
                 location.href = './reserve-overview.html';
             }
-        }
-
-        function showAlert() 
-        {
-            document.getElementById("alarm").style.display = "block";
         }
     </script>
     
