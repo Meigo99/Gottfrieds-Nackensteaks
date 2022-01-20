@@ -6,6 +6,30 @@
     <link href="./css/stylesheet.css" rel="stylesheet">
 </head>
 <body>
+    <script>
+        function checkInput()
+        {
+            var nachname = document.getElementById("nachname").value;
+            var email = document.getElementById("email").value;
+
+            console.log(nachname)
+            console.log(email)
+
+            if (nachname.length === 0 || email.length === 0)
+            {
+                showAlert();
+            }
+            else 
+            {
+                location.href = './reserve-overview.html';
+            }
+        }
+
+        function showAlert() 
+        {
+            document.getElementById("alarm").style.display = "block";
+        }
+    </script>
     
     <div class="container">
         <div class="row justify-content-center align-items-center mt-3" id="header">
@@ -44,6 +68,9 @@
                     <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuemin="0" aria-valuemax="100">4 von 5</div>
                 </div>
                 <div class="justify-content-center align-content-center" align="center">
+                    <div id="alarm" style="display: none" class="alert alert-danger" role="alert">
+                        Bitte gebe deinen Nachnamen und deine Email-Addresse an.
+                    </div>
                     <form method="post">
                         <table>
                             <tr>
@@ -59,7 +86,7 @@
                                     Nachname
                                 </td>
                                 <td>
-                                    <input name="nachname" type="text" placeholder="Nachname" />   
+                                    <input id="nachname" name="nachname" type="text" placeholder="Nachname" />   
                                 </td>
                             </tr>
                             <tr>
@@ -75,13 +102,13 @@
                                     E-Mail
                                 </td>
                                 <td>
-                                    <input name="email" type="text" placeholder="E-Mail Adresse" /> 
+                                    <input id="email" name="email" type="text" placeholder="E-Mail Adresse" /> 
                                 </td>
                             </tr>
                         </table>
                         <div>
                             <button name="back" class="btn btn-secondary" type="button" onclick="location.href = './reserve-meal.html';">Zurück</button>
-                            <button name="submit" class="btn btn-primary" type="button" onclick="location.href = './reserve-overview.html';">Weiter</button>
+                            <button name="submit" class="btn btn-primary" type="button" onclick="checkInput()">Weiter</button>
                         </div>
                     </form>
                 </div>
